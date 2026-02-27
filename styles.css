@@ -13,7 +13,7 @@ body {
 }
 
 #todo-app {
-    width: 80%;
+    width: 90%;
     border-radius: 1%;
     box-shadow: 0 0 0.1em 0.1em rgb(163, 163, 163);
     background-color: rgb(247, 241, 235);
@@ -24,7 +24,7 @@ body {
 }
 
 #btn-clear {
-    width: 18%;
+    width: 15%;
     align-self: flex-end;
     margin-right: 15%;
     padding: 0.7% 0;
@@ -36,6 +36,7 @@ body {
     align-self: flex-end;
     text-align: center;
     border-radius: 8%;
+    font-size: 1.3em;
 }
 
 button {
@@ -90,6 +91,7 @@ input:focus {
     #btn-clear {
         width: 18%;
         margin-right: 12%;
+        font-size: 0.9em;
     }
 
     input {
@@ -99,15 +101,39 @@ input:focus {
 
 @media screen and (width <= 600px) {
     #btn-add {
-        width: 12%;
+        width: 9%;
     }
 
     #btn-clear {
-        width: 30%;
-        margin-right: 7%;
+        width: 20%;
+        margin-right: 10%;
+        font-size: 0.8em;
+        padding: 1% 0;
     }
 
     input {
         height: 2.1em;
+    }
+}
+
+@media screen and (width <= 450px) {
+    #title {
+        font-size: 1.9em;
+    }
+
+    #btn-add {
+        width: 12%;
+        height: 1.2em;
+    }
+
+    #btn-clear {
+        width: 28%;
+        margin-right: 7%;
+        font-size: 0.8em;
+        padding: 1%;
+    }
+
+    input {
+        height: 1.9em;
     }
 }
