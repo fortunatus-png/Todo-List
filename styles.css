@@ -1,0 +1,113 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(240, 154, 154);
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 5%;
+    color: rgb(77, 2, 77);
+}
+
+#todo-app {
+    width: 80%;
+    border-radius: 1%;
+    box-shadow: 0 0 0.1em 0.1em rgb(163, 163, 163);
+    background-color: rgb(247, 241, 235);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 0 3% 5%;
+}
+
+#btn-clear {
+    width: 18%;
+    align-self: flex-end;
+    margin-right: 15%;
+    padding: 0.7% 0;
+    border-radius: 5%;
+}
+
+#btn-add {
+    width: 4%;
+    align-self: flex-end;
+    text-align: center;
+    border-radius: 8%;
+}
+
+button {
+    font-family: "DM Sans", sans-serif;
+    background-color: rgb(184, 115, 184);
+    border: 1px solid grey;
+    color: rgb(77, 2, 77);
+    font-size: 1em;
+    font-weight:bold;
+}
+
+input {
+    font-family: "DM Sans", sans-serif;
+    height: 2.2em;
+    background-color: rgb(248, 231, 215);
+    border-radius: 3%;
+    border: 1px solid grey;
+    width: 80%;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgb(252, 211, 173);
+}
+
+#input-container {
+    display: flex;
+    align-items: center;   
+    gap: 1%;              
+}
+
+@media screen and (width <= 900px) {
+    #btn-add {
+        width: 7%;
+    }
+
+    #btn-clear {
+        width: 20%;
+        margin-right: 12%;
+    }
+
+    input {
+        height: 2.1em;
+    }
+}
+
+@media screen and (width <= 700px) {
+    #btn-add {
+        width: 7%;
+    }
+
+    #btn-clear {
+        width: 18%;
+        margin-right: 12%;
+    }
+
+    input {
+        height: 2.1em;
+    }
+}
+
+@media screen and (width <= 600px) {
+    #btn-add {
+        width: 12%;
+    }
+
+    #btn-clear {
+        width: 30%;
+        margin-right: 7%;
+    }
+
+    input {
+        height: 2.1em;
+    }
+}
