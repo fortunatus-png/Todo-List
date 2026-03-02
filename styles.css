@@ -2,76 +2,84 @@
     box-sizing: border-box;
 }
 
+:root {
+    --white: rgb(255, 255, 255);
+    --graphite: rgb(53,53,53);
+    --stormy-teal: rgb(60,110,113);
+    --dust-grey: rgb(217,217,217);
+    --yale-blue: rgb(40,75,99);
+}
+
 body {
-    background-color: rgb(53,53,53);
+    background-color: var(--graphite);
     font-family: "DM Sans", sans-serif;
     display: flex;
     justify-content: center;
     margin: 0;
-    padding: 5%;
+    padding-top: 5%;
 }
 
 #title {
-    color: rgb(60,110,113);
+    color: var(--stormy-teal);
 }
 
 #todo-app {
     width: 90%;
     border-radius: 1%;
-    box-shadow: 0 0 0.1em 0.1em rgb(53,53,53);
-    background-color: rgb(217,217,217);
+    box-shadow: 0 0 0.1em 0.1em var(--graphite);
+    background-color: var(--dust-grey);
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 0 0 3% 5%;
+    padding: 0 5% 3% 5%;
 }
 
 #tasks {
-    width: 93%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 #btn-clear {
-    width: 12%;
     align-self: flex-end;
-    margin-right: 15%;
-    padding: 0.7% 0;
+    margin-right: 3.8%;
+    padding: 0.7% 1%;
     border-radius: 5%;
+    font-size: 1.1em;
+    flex: 1;
 }
 
 #btn-add {
-    width: 4%;
     align-self: flex-end;
     text-align: center;
     border-radius: 8%;
     font-size: 1.6em;
+    flex: 0.06;
 }
 
 button {
     font-family: "DM Sans", sans-serif;
-    background-color: rgb(60,110,113);
+    background-color: var(--stormy-teal);
     border: 1px solid grey;
-    color: rgb(217,217,217);
+    color: var(--dust-grey);
     font-size: 1em;
     font-weight:bold;
     cursor: pointer;
 }
 
-input {
+input[type="text"] {
     font-family: "DM Sans", sans-serif;
     height: 2.2em;
     font-size: 1em;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
     border-radius: 3%;
-    border: 1px solid rgb(40,75,99);
-    width: 80%;
+    border: 1px solid var(--yale-blue);
+    flex: 0.9;
 }
 
 input[type="text"]:focus {
     outline: none;
-    border: 1.3px solid rgb(211, 162, 116);
+    border: 1.3px solid var(--yale-blue);
 }
 
 #input-container {
@@ -83,16 +91,15 @@ input[type="text"]:focus {
 .task {
     height: 2.2em;
     font-size: 1em;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
     border-radius: 3%;
-    border: 1px solid rgb(40,75,99);
-    width: 80%;
+    border: 1px solid var(--yale-blue);
     display: flex;
     align-items: center;
 }
 
 .done {
-    text-decoration: line-through rgb(60,110,113) 13%;
+    text-decoration: line-through var(--stormy-teal) 13%;
 }
 
 .task-container {
@@ -103,15 +110,15 @@ input[type="text"]:focus {
 
 .chbox {
     appearance: none;
-    width: 37px;
     height: 37px;
-    border: 1px solid rgb(40,75,99);
+    border: 1px solid var(--yale-blue);
     border-radius: 80%;
+    flex: 1;
 }
 
 .chbox:checked::after {
     content: "✓";
-    color: rgb(60,110,113);
+    color: var(--stormy-teal);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,252 +128,7 @@ input[type="text"]:focus {
 .material-icons {
     border: 1px solid grey;
     border-radius: 5%;
-    background-color: rgb(60,110,113);
-    width: 4.5%;
+    background-color: var(--stormy-teal);
     font-size: 1.9em;
 }
 
-@media screen and (width <= 1120px) {
-    #btn-add {
-        width: 5%;
-        font-size: 1.5em;
-    }
-
-    #btn-clear {
-        width: 15%;
-        margin-right: 13%;
-        font-size: 1.1em;
-    }
-
-    input {
-        height: 2.1em;
-        font-size: 0.95em;
-    }
-
-    .chbox {
-        width: 33px;
-        height: 33px;
-    }
-
-    .material-icons {
-        width: 5.5%;
-        font-size: 1.7em;
-        text-align:center;
-    }
-
-    #tasks {
-        width: 95.4%;
-    }
-
-    .task {
-        height: 2em;
-        font-size: 0.97em;
-        width: 77.7%;
-    }
-}
-
-@media screen and (width <= 900px) {
-    #btn-add {
-        width: 5.3%;
-        font-size: 1.45em;
-    }
-
-    #btn-clear {
-        width: 17%;
-        margin-right: 13.5%;
-        font-size: 1.1em;
-    }
-
-    input {
-        height: 2.1em;
-        font-size: 0.95em;
-    }
-
-    .chbox {
-        width: 32px;
-        height: 32px;
-    }
-
-    .material-icons {
-        width: 6%;
-        font-size: 1.45em;
-        text-align:center;
-    }
-
-    #tasks {
-        width: 94%;
-    }
-
-    .task {
-        height: 2em;
-        font-size: 0.97em;
-        width: 77%;
-    }
-}
-
-@media screen and (width <= 700px) {
-    #btn-add {
-        width: 6.7%;
-        font-size: 1.44em;
-    }
-
-    #btn-clear {
-        width: 18%;
-        margin-right: 12%;
-        font-size: 0.9em;
-    }
-
-    input {
-        height: 2.1em;
-    }
-
-    .chbox {
-        width: 32px;
-        height: 32px;
-    }
-
-    .material-icons {
-        width: 8%;
-        font-size: 1.45em;
-        text-align:center;
-    }
-
-    #tasks {
-        width: 93%;
-    }
-
-    .task {
-        height: 2em;
-        font-size: 0.97em;
-        width: 77%;
-    }
-}
-
-@media screen and (width <= 600px) {
-    #btn-add {
-        width: 8%;
-    }
-
-    #btn-clear {
-        width: 22%;
-        margin-right: 10%;
-        font-size: 0.95em;
-        padding: 1% 0;
-    }
-
-    input {
-        height: 2.1em;
-    }
-
-    .chbox {
-        width: 30px;
-        height: 30px;
-    }
-
-    .material-icons {
-        width: 8.8%;
-        font-size: 1.5em;
-        text-align:center;
-    }
-
-    #tasks {
-        width: 94.5%;
-    }
-
-    .task {
-        height: 2em;
-        font-size: 0.9em;
-        width: 75%;
-    }
-}
-
-@media screen and (width <= 560px) {
-    #title {
-        font-size: 1.9em;
-    }
-
-    #btn-add {
-        width: 11%;
-        height: 1.35em;
-        font-size: 1.3em;
-    }
-
-    #btn-clear {
-        width: 30%;
-        margin-right: 7%;
-        font-size: 0.85em;
-        padding: 1%;
-    }
-
-    input {
-        height: 2em;
-        font-size: 0.9em;
-        width: 82%;
-    }
-
-    .chbox {
-        width: 26px;
-        height: 26px;
-    }
-
-    .material-icons {
-        width: 12%;
-        font-size: 1.3em;
-        text-align:center;
-    }
-
-    #tasks {
-        width: 94%;
-    }
-
-    .task {
-        height: 2em;
-        font-size: 0.9em;
-        width: 77%;
-    }
-}
-
-@media screen and (width <= 400px) {
-    #title {
-        font-size: 1.9em;
-    }
-
-    #btn-add {
-        width: 11%;
-        height: 1.35em;
-        font-size: 1.3em;
-    }
-
-    #btn-clear {
-        width: 30%;
-        margin-right: 7%;
-        font-size: 0.85em;
-        padding: 1%;
-    }
-
-    input {
-        height: 1.9em;
-        font-size: 0.9em;
-    }
-
-    .chbox {
-        width: 26px;
-        height: 26px;
-    }
-
-    .material-icons {
-        width: 12%;
-        font-size: 1.3em;
-        text-align:center;
-    }
-
-    #tasks {
-        width: 94%;
-    }
-
-    .task {
-        height: 1.9em;
-        font-size: 0.9em;
-        width: 72%;
-    }
-}
