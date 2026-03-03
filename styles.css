@@ -3,16 +3,15 @@
 }
 
 :root {
-    --white: rgb(255, 255, 255);
-    --graphite: rgb(53,53,53);
-    --stormy-teal: rgb(60,110,113);
-    --dust-grey: rgb(217,217,217);
-    --yale-blue: rgb(40,75,99);
-    --orange-like: rgb(238,150,75);
+    --dark-coffee: #432818;
+    --chocolate-brown: #99582a;
+    --light-apricot: #ffe6a7;
+    --camel: #bb9457;
+    --dark-wine: #6f1d1b;
 }
 
 body {
-    background-color: var(--graphite);
+    background-color: var(--camel);
     font-family: "DM Sans", sans-serif;
     display: flex;
     justify-content: center;
@@ -21,14 +20,13 @@ body {
 }
 
 #title {
-    color: var(--stormy-teal);
+    color: var(--light-apricot);
 }
 
 #todo-app {
     width: 90%;
-    border-radius: 1%;
-    box-shadow: 0 0 0.1em 0.1em var(--graphite);
-    background-color: var(--dust-grey);
+    border-radius: 3px;
+    background-color: var(--dark-coffee);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -41,26 +39,28 @@ body {
     gap: 10px;
 }
 
-#btn-clear {
+#clear-container {
     align-self: flex-end;
-    font-size: 1.1em;
 }
 
-#btn-clear button {
-    background-color: var(--graphite);
+#btn-clear {
+    background-color: var(--dark-wine);
+    border: 1px solid var(--dark-wine);
+    height: 5vh;
+    font-size: 1.2em;
 }
 
 #btn-add {
     text-align: center;
-    font-size: 1.6em;
+    font-size: 1.8em;
+    /* padding: 0 4px; */
+    border: none;
 }
 
 button {
-    background-color: var(--stormy-teal);
+    background-color: var(--camel);
     font-family: "DM Sans", sans-serif;
-    border: 1px solid grey;
-    color: var(--white);
-    font-size: 1.1em;
+    color: var(--light-apricot);
     font-weight: bold;
     cursor: pointer;
     border-radius: 3px;
@@ -70,16 +70,16 @@ input[type="text"] {
     font-family: "DM Sans", sans-serif;
     height: 2.2em;
     font-size: 1em;
-    background-color: var(--white);
-    border-radius: 5px;
-    border: 1px solid var(--yale-blue);
+    background-color: var(--dark-coffee);
+    color: var(--camel);
+    border-radius: 3px;
+    border: 1px solid var(--camel);
     flex-grow: 1;
+    padding-left: 5px;
 }
 
 input[type="text"]:focus {
     outline: none;
-    border: 1.3px solid var(--yale-blue);
-    padding-left: 5px;
 }
 
 #input-container {
@@ -92,10 +92,9 @@ input[type="text"]:focus {
 .task {
     height: 2.2em;
     font-size: 1em;
-    background-color: var(--orange-like);
-    color: var(--white);
-    border-radius: 5px;
-    border: 1px solid var(--yale-blue);
+    background-color: var(--camel);
+    color: var(--light-apricot);
+    border-radius: 3px;
     display: flex;
     align-items: center;
     padding-left: 5px;
@@ -103,7 +102,7 @@ input[type="text"]:focus {
 }
 
 .done {
-    text-decoration: line-through var(--white) 13%;
+    text-decoration: line-through var(--light-apricot) 13%;
 }
 
 .task-container {
@@ -116,26 +115,26 @@ input[type="text"]:focus {
 .chbox {
     appearance: none;
     height: 35px;
-    border: 1px solid var(--yale-blue);
     border-radius: 50%;
-    flex: 0.15;
+    width: 35px;
     cursor: pointer;
-    background-color: var(--orange-like);
+    background-color: var(--camel);
 }
 
 .chbox:checked::after {
     content: "✓";
-    color: var(--white);
+    color: var(--light-apricot);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.9em;
+    font-size: 2.2em;
 }
 
 .material-icons {
-    border: 1px solid grey;
+    border: none;
     border-radius: 3px;
-    background-color: var(--stormy-teal);
-    font-size: 1.5em;
+    background-color: var(--camel);
+    font-size: 1.6em;
+    height: 1.39em;
 }
 
