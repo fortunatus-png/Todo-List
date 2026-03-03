@@ -1,0 +1,139 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-coffee: #432818;
+    --chocolate-brown: #99582a;
+    --light-apricot: #ffe6a7;
+    --camel: #bb9457;
+    --dark-wine: #6f1d1b;
+}
+
+body {
+    background-color: var(--camel);
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-top: 5%;
+}
+
+#title {
+    color: var(--light-apricot);
+}
+
+#todo-app {
+    width: 90%;
+    border-radius: 3px;
+    background-color: var(--dark-coffee);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 5% 3% 5%;
+}
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#clear-container {
+    align-self: flex-end;
+}
+
+#btn-clear {
+    background-color: var(--dark-wine);
+    border: 1px solid var(--dark-wine);
+    height: 5vh;
+    font-size: 1.2em;
+}
+
+#btn-add {
+    text-align: center;
+    font-size: 1.8em;
+    border: none;
+}
+
+button {
+    background-color: var(--camel);
+    font-family: "DM Sans", sans-serif;
+    color: var(--light-apricot);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+input[type="text"] {
+    font-family: "DM Sans", sans-serif;
+    height: 2.2em;
+    font-size: 1em;
+    background-color: var(--dark-coffee);
+    color: var(--camel);
+    border-radius: 3px;
+    border: 1px solid var(--camel);
+    flex-grow: 1;
+    padding-left: 5px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+#input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    gap: 8px;              
+}
+
+.task {
+    height: 2.2em;
+    font-size: 1em;
+    background-color: var(--camel);
+    color: var(--light-apricot);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    flex-grow: 1;
+}
+
+.done {
+    text-decoration: line-through var(--light-apricot) 13%;
+}
+
+.task-container {
+    display: flex;
+    align-items: center;   
+    justify-content: space-between;   
+    gap: 8px;          
+}
+
+.chbox {
+    appearance: none;
+    height: 35px;
+    border-radius: 50%;
+    width: 35px;
+    cursor: pointer;
+    background-color: var(--camel);
+}
+
+.chbox:checked::after {
+    content: "✓";
+    color: var(--light-apricot);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2em;
+}
+
+.material-icons {
+    border: none;
+    border-radius: 3px;
+    background-color: var(--camel);
+    font-size: 1.6em;
+    height: 1.39em;
+}
+

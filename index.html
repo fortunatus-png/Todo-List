@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>To-Do's</title>
 </head>
 <body>
+    <main id="todo-app">
+        <h1 id="title">To-Do's 📜</h1>
+        <div id="input-container">
+            <input type="text" placeholder="Add your task" name="input" id="input">
+            <button id="btn-add">&#10010;</button>
+        </div>
+
+        <div id="tasks">
+            <div class="task-container">
+                <input type="checkbox" class="chbox">
+                <span class="task">Done layout on 3th of March</span>
+                <button class="material-icons">&#xe872;</button>
+            </div>
+                <div class="task-container">
+                <input type="checkbox" class="chbox">
+                <span class="task">Then started with logik part</span>
+                <button class="material-icons">&#xe872;</button>
+            </div>
+        </div>
+
+        <div id="clear-container">
+            <button id="btn-clear">Clear All</button>
+        </div>
+    </main>
     
     <script src="script.js"></script>
 </body>
