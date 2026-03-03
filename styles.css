@@ -8,6 +8,7 @@
     --stormy-teal: rgb(60,110,113);
     --dust-grey: rgb(217,217,217);
     --yale-blue: rgb(40,75,99);
+    --orange-like: rgb(238,150,75);
 }
 
 body {
@@ -42,29 +43,27 @@ body {
 
 #btn-clear {
     align-self: flex-end;
-    margin-right: 3.8%;
-    padding: 0.7% 1%;
-    border-radius: 5%;
     font-size: 1.1em;
-    flex: 1;
+}
+
+#btn-clear button {
+    background-color: var(--graphite);
 }
 
 #btn-add {
-    align-self: flex-end;
     text-align: center;
-    border-radius: 8%;
     font-size: 1.6em;
-    flex: 0.06;
 }
 
 button {
-    font-family: "DM Sans", sans-serif;
     background-color: var(--stormy-teal);
+    font-family: "DM Sans", sans-serif;
     border: 1px solid grey;
-    color: var(--dust-grey);
-    font-size: 1em;
-    font-weight:bold;
+    color: var(--white);
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
+    border-radius: 3px;
 }
 
 input[type="text"] {
@@ -72,63 +71,71 @@ input[type="text"] {
     height: 2.2em;
     font-size: 1em;
     background-color: var(--white);
-    border-radius: 3%;
+    border-radius: 5px;
     border: 1px solid var(--yale-blue);
-    flex: 0.9;
+    flex-grow: 1;
 }
 
 input[type="text"]:focus {
     outline: none;
     border: 1.3px solid var(--yale-blue);
+    padding-left: 5px;
 }
 
 #input-container {
     display: flex;
-    align-items: flex-start;   
-    gap: 1%;              
+    align-items: center;
+    justify-content: space-between;   
+    gap: 8px;              
 }
 
 .task {
     height: 2.2em;
     font-size: 1em;
-    background-color: var(--white);
-    border-radius: 3%;
+    background-color: var(--orange-like);
+    color: var(--white);
+    border-radius: 5px;
     border: 1px solid var(--yale-blue);
     display: flex;
     align-items: center;
+    padding-left: 5px;
+    flex-grow: 1;
 }
 
 .done {
-    text-decoration: line-through var(--stormy-teal) 13%;
+    text-decoration: line-through var(--white) 13%;
 }
 
 .task-container {
     display: flex;
     align-items: center;   
-    gap: 1%;              
+    justify-content: space-between;   
+    gap: 8px;          
 }
 
 .chbox {
     appearance: none;
-    height: 37px;
+    height: 35px;
     border: 1px solid var(--yale-blue);
-    border-radius: 80%;
-    flex: 1;
+    border-radius: 50%;
+    flex: 0.15;
+    cursor: pointer;
+    background-color: var(--orange-like);
 }
 
 .chbox:checked::after {
     content: "✓";
-    color: var(--stormy-teal);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6em;
+    font-size: 1.9em;
 }
 
 .material-icons {
     border: 1px solid grey;
-    border-radius: 5%;
+    border-radius: 3px;
     background-color: var(--stormy-teal);
-    font-size: 1.9em;
+    font-size: 1.5em;
 }
 
