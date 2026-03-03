@@ -6,9 +6,11 @@ const input = document.getElementById("input");
 
 
 addBtn.addEventListener("click", () => {
-    tasks.innerHTML += `<div class="task-container">
-        <input type="checkbox" class="chbox">
-        <span class="task">${input.value}</span>
-        <button class="material-icons">&#xe872;</button></div>`;
-    input.value = "";
+    if(input.value !== "") {
+        tasks.innerHTML += `<div class="task-container">
+            <input type="checkbox" class="chbox">
+            <span class="task">${input.value}</span>
+            <button class="material-icons">&#xe872;</button></div>`;
+        input.value = "";
+    }
 });
