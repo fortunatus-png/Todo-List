@@ -46,7 +46,7 @@ body {
 #btn-clear {
     background-color: var(--dark-wine);
     border: 1px solid var(--dark-wine);
-    height: 5vh;
+    height: 7vh;
     font-size: 1.2em;
 }
 
@@ -101,7 +101,7 @@ input[type="text"]:focus {
 }
 
 .done {
-    text-decoration: line-through var(--light-apricot) 13%;
+    text-decoration: line-through var(--light-apricot) 3px;
 }
 
 .task-container {
