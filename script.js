@@ -16,3 +16,14 @@ addBtn.addEventListener("click", () => {
         input.value = "";
     }
 });
+
+tasks.addEventListener("click", (e) => {
+    const target = e.target;
+    const taskContainer = target.closest(".task-container");
+    if(!taskContainer) return;
+    const task = taskContainer.querySelector(".task");
+    const chbox = taskContainer.querySelector(".chbox");
+    if(target.type === "checkbox") {
+        task.classList.toggle("done", chbox.checked);
+    }
+});
