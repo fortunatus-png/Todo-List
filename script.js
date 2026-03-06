@@ -23,7 +23,7 @@ tasks.addEventListener("click", (e) => {
     if(!taskContainer) return;
     const task = taskContainer.querySelector(".task");
     const chbox = taskContainer.querySelector(".chbox");
-    
+
     if(target.type === "checkbox") {
         task.classList.toggle("done", chbox.checked);
     }
@@ -31,4 +31,8 @@ tasks.addEventListener("click", (e) => {
     if(target.tagName === "BUTTON") {
         taskContainer.remove();
     }
+});
+
+clearBtn.addEventListener("click", () => {
+    tasks.textContent = "";
 });
