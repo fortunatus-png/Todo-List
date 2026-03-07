@@ -20,6 +20,7 @@ const addTask = () => {
     
         const btnEl = document.createElement("button");
         btnEl.classList.add("material-icons");
+        btnEl.setAttribute("type", "button");
         btnEl.innerHTML = "&#xe872;";
         newTask.appendChild(btnEl);
     
