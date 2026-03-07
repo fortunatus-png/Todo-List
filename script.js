@@ -3,27 +3,42 @@ const clearBtn = document.getElementById("btn-clear");
 const tasks = document.getElementById("tasks");
 const input = document.getElementById("input");
 
-
-addBtn.addEventListener("click", () => {
+const addTask = () => {
     if(input.value.trim() !== "") {
-        let newTask = document.createElement("div");
+        const newTask = document.createElement("div");
         newTask.classList.add("task-container");
-        newTask.innerHTML = `
-            <input type="checkbox" class="chbox">
-            <span class="task">${input.value}</span>
-            <button class="material-icons">&#xe872;</button>`;
+    
+        const checkboxEl = document.createElement("input");
+        checkboxEl.classList.add("chbox");
+        checkboxEl.setAttribute("type", "checkbox");
+        newTask.appendChild(checkboxEl);
+    
+        const spanEl = document.createElement("span");
+        spanEl.classList.add("task");
+        spanEl.innerText = input.value;
+        newTask.appendChild(spanEl);
+    
+        const btnEl = document.createElement("button");
+        btnEl.classList.add("material-icons");
+        btnEl.innerHTML = "&#xe872;";
+        newTask.appendChild(btnEl);
+    
         tasks.appendChild(newTask);
         input.value = "";
     }
-});
+};
 
-tasks.addEventListener("click", (e) => {
+addBtn.addEventListener("click", addTask);
+
+const toggleTaskDone = e => {
     const target = e.target;
+    if(target.type !== "checkbox") return;
+
     const taskContainer = target.closest(".task-container");
     if(!taskContainer) return;
+
     const task = taskContainer.querySelector(".task");
-    const chbox = taskContainer.querySelector(".chbox");
-    if(target.type === "checkbox") {
-        task.classList.toggle("done", chbox.checked);
-    }
-});
+    task.classList.toggle("done", target.checked);
+};
+
+tasks.addEventListener("click", toggleTaskDone);
