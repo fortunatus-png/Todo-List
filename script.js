@@ -8,38 +8,46 @@ const addTask = () => {
         const newTask = document.createElement("div");
         newTask.classList.add("task-container");
     
-        const checkboxEl = document.createElement("input");
-        checkboxEl.classList.add("chbox");
-        checkboxEl.setAttribute("type", "checkbox");
-        newTask.appendChild(checkboxEl);
-    
-        const spanEl = document.createElement("span");
-        spanEl.classList.add("task");
-        spanEl.innerText = input.value;
-        newTask.appendChild(spanEl);
-    
-        const btnEl = document.createElement("button");
-        btnEl.classList.add("material-icons");
-        btnEl.setAttribute("type", "button");
-        btnEl.innerHTML = "&#xe872;";
-        newTask.appendChild(btnEl);
+        newTask.appendChild(createCheckBox());
+        newTask.appendChild(createSpanWithValue());    
+        newTask.appendChild(createButtonWithIcon());
     
         tasks.appendChild(newTask);
-        input.value = "";
+        clearInput();
     }
 };
-
-addBtn.addEventListener("click", addTask);
 
 const toggleTaskDone = e => {
     const target = e.target;
     if(target.type !== "checkbox") return;
-
-    const taskContainer = target.closest(".task-container");
-    if(!taskContainer) return;
-
-    const task = taskContainer.querySelector(".task");
+    
+    const task = target.closest(".task");
     task.classList.toggle("done", target.checked);
 };
 
+const createCheckBox = () => {
+    const checkboxEl = document.createElement("input");
+    checkboxEl.classList.add("chbox");
+    checkboxEl.setAttribute("type", "checkbox");
+    return checkboxEl;
+};
+
+const createSpanWithValue = () => {
+    const spanEl = document.createElement("span");
+    spanEl.classList.add("task");
+    spanEl.innerText = input.value;
+    return spanEl;
+};
+
+const createButtonWithIcon = () => {
+    const btnEl = document.createElement("button");
+    btnEl.classList.add("material-icons");
+    btnEl.setAttribute("type", "button");
+    btnEl.innerHTML = "&#xe872;";
+    return btnEl;
+};
+
+const clearInput = () => input.value = "";
+
+addBtn.addEventListener("click", addTask);
 tasks.addEventListener("click", toggleTaskDone);
