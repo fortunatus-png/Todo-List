@@ -3,22 +3,54 @@ const clearBtn = document.getElementById("btn-clear");
 const tasks = document.getElementById("tasks");
 const input = document.getElementById("input");
 
-
-addBtn.addEventListener("click", () => {
+const addTask = () => {
     if(input.value.trim() !== "") {
-        let newTask = document.createElement("div");
+        const newTask = document.createElement("div");
         newTask.classList.add("task-container");
-        newTask.innerHTML = `
-            <input type="checkbox" class="chbox">
-            <span class="task">${input.value}</span>
-            <button class="material-icons deleteBtn" type="button">&#xe872;</button>`;
+    
+        newTask.appendChild(createCheckBox());
+        newTask.appendChild(createSpanWithValue());    
+        newTask.appendChild(createButtonWithIcon());
+    
         tasks.appendChild(newTask);
-        input.value = "";
+        clearInput();
     }
-});
+};
 
-tasks.addEventListener("click", (e) => {
+const toggleTaskDone = e => {
     const target = e.target;
+    if(target.type !== "checkbox") return;
+    
+    const task = target.closest(".task");
+    task.classList.toggle("done", target.checked);
+};
+
+const createCheckBox = () => {
+    const checkboxEl = document.createElement("input");
+    checkboxEl.classList.add("chbox");
+    checkboxEl.setAttribute("type", "checkbox");
+    return checkboxEl;
+};
+
+const createSpanWithValue = () => {
+    const spanEl = document.createElement("span");
+    spanEl.classList.add("task");
+    spanEl.innerText = input.value;
+    return spanEl;
+};
+
+const createButtonWithIcon = () => {
+    const btnEl = document.createElement("button");
+    btnEl.classList.add("material-icons");
+    btnEl.setAttribute("type", "button");
+    btnEl.innerHTML = "&#xe872;";
+    return btnEl;
+};
+
+const clearInput = () => input.value = "";
+
+addBtn.addEventListener("click", addTask);
+tasks.addEventListener("click", toggleTaskDone);
     const taskContainer = target.closest(".task-container");
     if(!taskContainer) return;
     const task = taskContainer.querySelector(".task");
