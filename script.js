@@ -33,3 +33,7 @@ tasks.addEventListener("click", (e) => {
         taskContainer.remove();
     }
 });
+
+clearBtn.addEventListener("click", () => {
+    tasks.textContent = "";
+});
