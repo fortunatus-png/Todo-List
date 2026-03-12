@@ -51,3 +51,21 @@ const clearInput = () => input.value = "";
 
 addBtn.addEventListener("click", addTask);
 tasks.addEventListener("click", toggleTaskDone);
+    const taskContainer = target.closest(".task-container");
+    if(!taskContainer) return;
+    const task = taskContainer.querySelector(".task");
+    const chbox = taskContainer.querySelector(".chbox");
+    const btn = taskContainer.querySelector(".deleteBtn");
+    
+    if(target === "checkbox") {
+        task.classList.toggle("done", chbox.checked);
+    }
+
+    if(target === btn) {
+        taskContainer.remove();
+    }
+});
+
+clearBtn.addEventListener("click", () => {
+    tasks.textContent = "";
+});
