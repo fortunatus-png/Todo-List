@@ -25,11 +25,11 @@ tasks.addEventListener("click", (e) => {
     const chbox = taskContainer.querySelector(".chbox");
     const btn = taskContainer.querySelector(".deleteBtn");
     
-    if(target.type === "checkbox") {
+    if(target === "checkbox") {
         task.classList.toggle("done", chbox.checked);
     }
 
-    if(target.className === btn.className) {
+    if(target === btn) {
         taskContainer.remove();
     }
 });
