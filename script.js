@@ -23,9 +23,9 @@ const toggleTaskDoneOrRemove = e => {
     if(!taskContainer) return;
     const task = taskContainer.querySelector(".task");
     
-    if(target.type === "checkbox") {
+    if(target.closest(".chbox")) {
         task.classList.toggle("done", target.checked);
-    }else if(target.classList.contains("deleteBtn")) {
+    }else if(target.closest(".deleteBtn")) {
         taskContainer.remove();
     }
 };
