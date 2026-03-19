@@ -3,6 +3,21 @@ const clearBtn = document.getElementById("btn-clear");
 const tasks = document.getElementById("tasks");
 const input = document.getElementById("input");
 
+const renderTask = ({text, done}) => {
+    const newTask = document.createElement("div");
+        newTask.classList.add("task-container");
+
+        const checkBox = createCheckBox();
+        const spanWithValue = createSpanWithValue();
+        const deleteBtn = createButtonWithIcon();
+    
+        newTask.appendChild(checkBox);
+        newTask.appendChild(spanWithValue);    
+        newTask.appendChild(deleteBtn);
+    
+        tasks.appendChild(newTask);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const taskArray = getTasks();
     
