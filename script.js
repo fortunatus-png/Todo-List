@@ -3,17 +3,51 @@ const clearBtn = document.getElementById("btn-clear");
 const tasks = document.getElementById("tasks");
 const input = document.getElementById("input");
 
+document.addEventListener('DOMContentLoaded', () => {
+    const taskArray = getTasks();
+    
+    taskArray.forEach(task => {
+        const newTask = document.createElement("div");
+        newTask.classList.add("task-container");
+
+        const checkBox = createCheckBox();
+        const spanWithValue = createSpanWithValue();
+        const deleteBtn = createButtonWithIcon();
+    
+        checkBox.checked = task.done;
+        spanWithValue.textContent = task.text;
+        spanWithValue.classList.toggle("done", task.done);
+
+        newTask.appendChild(checkBox);
+        newTask.appendChild(spanWithValue);    
+        newTask.appendChild(deleteBtn);
+
+        tasks.appendChild(newTask);
+    });
+});
+
 const addTask = () => {
     if(input.value.trim() !== "") {
         const newTask = document.createElement("div");
         newTask.classList.add("task-container");
+
+        const checkBox = createCheckBox();
+        const spanWithValue = createSpanWithValue();
+        const deleteBtn = createButtonWithIcon();
     
-        newTask.appendChild(createCheckBox());
-        newTask.appendChild(createSpanWithValue());    
-        newTask.appendChild(createButtonWithIcon());
+        newTask.appendChild(checkBox);
+        newTask.appendChild(spanWithValue);    
+        newTask.appendChild(deleteBtn);
     
         tasks.appendChild(newTask);
         clearInput();
+
+        const taskArray = getTasks();
+        const text = spanWithValue.textContent;
+        const done = checkBox.checked;
+        const taskObj = {text, done};
+        taskArray.push(taskObj);
+        localStorage.setItem("tasks", JSON.stringify(taskArray));
     }
 };
 
@@ -22,11 +56,33 @@ const toggleTaskDoneOrRemove = e => {
     const taskContainer = target.closest(".task-container");
     if(!taskContainer) return;
     const task = taskContainer.querySelector(".task");
+
+    const taskArray = getTasks();
     
     if(target.closest(".chbox")) {
         task.classList.toggle("done", target.checked);
-    }else if(target.closest(".deleteBtn")) {
+        taskArray.forEach(item => {
+            if(item.text === task.innerText) {
+                item.done = target.checked;
+            }
+        });
+        localStorage.setItem("tasks", JSON.stringify(taskArray));
+    } else if(target.closest(".deleteBtn")) {
+        const index = taskArray.findIndex(t => t.text === task.innerText);
+        taskArray.splice(index, 1);
+        localStorage.setItem("tasks", JSON.stringify(taskArray));
+
         taskContainer.remove();
+    }
+};
+
+const getTasks = () => {
+    try {
+        const taskArr = JSON.parse(localStorage.getItem("tasks"));
+        if(!Array.isArray(taskArr)) {return [];}
+        return taskArr;
+    } catch(err) {
+        return [];
     }
 };
 
@@ -56,4 +112,7 @@ const clearInput = () => input.value = "";
 
 addBtn.addEventListener("click", addTask);
 tasks.addEventListener("click", toggleTaskDoneOrRemove);
-clearBtn.addEventListener("click", () => tasks.textContent = "");
+clearBtn.addEventListener("click", () => {
+    tasks.textContent = "";
+    localStorage.clear();
+});
