@@ -50,29 +50,6 @@ const toggleTaskDoneOrRemove = e => {
     }
 };
 
-
-const createCheckBox = () => {
-    const checkboxEl = document.createElement("input");
-    checkboxEl.classList.add("chbox");
-    checkboxEl.setAttribute("type", "checkbox");
-    return checkboxEl;
-};
-
-const createSpanWithValue = (text) => {
-    const spanEl = document.createElement("span");
-    spanEl.classList.add("task");
-    spanEl.innerText = text;
-    return spanEl;
-};
-
-const createButtonWithIcon = () => {
-    const btnEl = document.createElement("button");
-    btnEl.setAttribute("type", "button");
-    btnEl.classList.add("deleteBtn", "material-icons");
-    btnEl.innerHTML = "&#xe872;";
-    return btnEl;
-};
-
 const renderTask = ({done, text}) => {
     const newTask = document.createElement("div");
     newTask.classList.add("task-container");
@@ -99,6 +76,28 @@ const getTasks = () => {
     } catch(err) {
         return [];
     }
+};
+
+const createCheckBox = () => {
+    const checkboxEl = document.createElement("input");
+    checkboxEl.classList.add("chbox");
+    checkboxEl.setAttribute("type", "checkbox");
+    return checkboxEl;
+};
+
+const createSpanWithValue = (text) => {
+    const spanEl = document.createElement("span");
+    spanEl.classList.add("task");
+    spanEl.innerText = text;
+    return spanEl;
+};
+
+const createButtonWithIcon = () => {
+    const btnEl = document.createElement("button");
+    btnEl.setAttribute("type", "button");
+    btnEl.classList.add("deleteBtn", "material-icons");
+    btnEl.innerHTML = "&#xe872;";
+    return btnEl;
 };
 
 const clearInput = () => input.value = "";
