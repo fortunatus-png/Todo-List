@@ -92,9 +92,17 @@ Todo-List/
 
 ## Screenshots
 
-- **Main Interface:** <img src="./images/main-interface.png" width="500" height="500" alt="Todo app mockup">
-- **Completed Tasks:** <img src="./images/completed-tasks.png" width="500" height="500" alt="Todo app mockup">
-- **Mobile View:** <img src="./images/mobile-view.png" width="500" height="500" alt="Todo app mockup">
+- **Main Interface:**
+  
+<img src="./images/main-interface.png" width="750" height="400" alt="Todo app mockup">
+
+- **Completed Tasks:** 
+  
+<img src="./images/completed-tasks.png" width="750" height="400" alt="Todo app mockup">
+
+- **Mobile View:**
+  
+<img src="./images/mobile-view.png" width="300" height="400" alt="Todo app mockup">
 
 ## Learning Outcomes
 
