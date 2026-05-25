@@ -126,7 +126,7 @@ This project provided valuable hands-on experience with:
 ### Testing
 - **Playwright Setup:** Configuring and running end-to-end tests with Playwright and Serve
 
-See [docs/learnings.md](./docs/learnings.md) for detailed learning notes.
+See [docs/learnings.md](./docs/LEARNINGS.md) for detailed learning notes.
 
 ## Timeline
 
@@ -150,4 +150,4 @@ The project was developed according to the following timeline:
 - [Clear all tasks](https://github.com/fortunatus-png/Todo-List/pull/12)
 - [Toggle task done](https://github.com/fortunatus-png/Todo-List/pull/10)
 
-See [docs/plan.md](./docs/plan.md) for the detailed project plan.
+See [docs/plan.md](./docs/PLAN.md) for the detailed project plan.
