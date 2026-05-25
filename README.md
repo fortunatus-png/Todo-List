@@ -2,6 +2,10 @@
 
 A simple and intuitive todo list application built with vanilla JavaScript, CSS, and HTML. This project demonstrates core web development concepts including DOM manipulation, event handling, and client-side state management.
 
+> **Human-Written Code**  
+> This project was independently developed, using AI only as tool for troubleshooting and learning.  
+> Hence this project demonstrates the acquired basic programming skills and an authentic learning progress.
+
 ## Table of Contents
 
 - [Description](#description)
