@@ -92,9 +92,9 @@ Todo-List/
 
 ## Screenshots
 
-- **Main Interface:** [Screenshot of the todo list app](./images/main-interface.png)
-- **Completed Tasks:** [Screenshot showing marked tasks](./images/completed-tasks.png)
-- **Mobile View:** [Screenshot of responsive design](./images/mobile-view.png)
+- **Main Interface:** (./images/main-interface.png)
+- **Completed Tasks:** (./images/completed-tasks.png)
+- **Mobile View:** (./images/mobile-view.png)
 
 ## Learning Outcomes
 
