@@ -8,12 +8,10 @@ A simple and intuitive todo list application built with vanilla JavaScript, CSS,
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Setup & Installation](#setup--installation)
-- [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Screenshots](#screenshots)
 - [Learning Outcomes](#learning-outcomes)
 - [Timeline](#timeline)
-- [License](#license)
 
 ## Description
 
