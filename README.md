@@ -8,14 +8,22 @@ A simple and intuitive todo list application built with vanilla JavaScript, CSS,
 
 ## Table of Contents
 
-- [Description](#description)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Setup & Installation](#setup--installation)
-- [Project Structure](#project-structure)
-- [Screenshots](#screenshots)
-- [Learning Outcomes](#learning-outcomes)
-- [Timeline](#timeline)
+- [Todo List App](#todo-list-app)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+  - [Setup \& Installation](#setup--installation)
+    - [Prerequisites](#prerequisites)
+    - [Installation Steps](#installation-steps)
+  - [Project Structure](#project-structure)
+  - [Screenshots](#screenshots)
+  - [Learning Outcomes](#learning-outcomes)
+    - [Styling](#styling)
+    - [Logic \& Programming](#logic--programming)
+    - [Testing](#testing)
+  - [Timeline](#timeline)
+    - [Development Tasks](#development-tasks)
 
 ## Description
 
@@ -84,11 +92,9 @@ Todo-List/
 
 ## Screenshots
 
-*Add screenshots here to showcase the application UI and functionality*
-
-- **Main Interface:** [Screenshot of the todo list app]
-- **Completed Tasks:** [Screenshot showing marked tasks]
-- **Mobile View:** [Screenshot of responsive design]
+- **Main Interface:** [Screenshot of the todo list app](./images/main-interface.png)
+- **Completed Tasks:** [Screenshot showing marked tasks](./images/completed-tasks.png)
+- **Mobile View:** [Screenshot of responsive design](./images/mobile-view.png)
 
 ## Learning Outcomes
 
