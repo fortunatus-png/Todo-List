@@ -39,11 +39,6 @@ The project follows a structured, top-down code organization approach, emphasizi
 | **Testing** | Playwright |
 | **Server** | Serve (for testing/development) |
 
-**Language Composition:**
-- JavaScript: 72.5%
-- CSS: 20.9%
-- HTML: 6.6%
-
 ## Setup & Installation
 
 ### Prerequisites
@@ -53,18 +48,12 @@ The project follows a structured, top-down code organization approach, emphasizi
 
 ### Installation Steps
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/fortunatus-png/Todo-List.git
-   cd Todo-List
-   ```
-
-2. **Install dependencies:**
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Start the development server:**
+2. **Start the development server:**
    ```bash
    npm run dev
    ```
@@ -73,28 +62,9 @@ The project follows a structured, top-down code organization approach, emphasizi
    npx serve
    ```
 
-4. **Open in browser:**
+3. **Open in browser:**
    Navigate to `http://localhost:3000` (or the port shown in your terminal)
 
-## Usage
-
-### Basic Operations
-
-1. **Add a Task:**
-   - Type your task in the input field
-   - Press Enter or click the "Add" button
-   - Your task will appear in the list
-
-2. **Mark Task as Done:**
-   - Click on the task to toggle its completion status
-   - Done tasks will be visually distinguished
-
-3. **Delete a Task:**
-   - Click the delete button (❌) next to the task you want to remove
-
-4. **Clear All Tasks:**
-   - Click the "Clear All" button to remove all tasks at once
-   - This action cannot be undone
 
 ## Project Structure
 
@@ -163,11 +133,3 @@ The project was developed according to the following timeline:
 - [Toggle task done](https://github.com/fortunatus-png/Todo-List/pull/10)
 
 See [PLAN.md](./PLAN.md) for the detailed project plan.
-
-## License
-
-[Add your license here]
-
----
-
-**Happy organizing!** 📝✨
