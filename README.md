@@ -71,6 +71,7 @@ Todo-List/
 ├── index.html           # Main HTML file
 ├── styles.css           # Styling with Flexbox
 ├── script.js            # JavaScript logic & DOM manipulation
+├── tests/               # End-to-end tests
 ├── docs/
 │   ├── plan.md          # Project planning & timeline
 │   └── learnings.md     # Key learning outcomes
