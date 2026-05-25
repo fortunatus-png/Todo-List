@@ -11,16 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const addTask = () => {
-    if(input.value.trim() !== "") {
-        const taskArray = getTasks();      
+    if (input.value.trim() !== "") {
+        const taskArray = getTasks();
         const done = false;
         const text = input.value;
-        const taskObj = {done, text};
+        const taskObj = { done, text };
         renderTask(taskObj);
-        
+
         taskArray.push(taskObj);
         localStorage.setItem("tasks", JSON.stringify(taskArray));
-        
+
         clearInput();
     }
 };
@@ -28,29 +28,29 @@ const addTask = () => {
 const toggleTaskDoneOrRemove = e => {
     const target = e.target;
     const taskContainer = target.closest(".task-container");
-    if(!taskContainer) return;
+    if (!taskContainer) return;
     const task = taskContainer.querySelector(".task");
-    
+
     const taskArray = getTasks();
-    
-    if(target.closest(".chbox")) {
+
+    if (target.closest(".chbox")) {
         task.classList.toggle("done", target.checked);
         taskArray.forEach(item => {
-            if(item.text === task.innerText) {
+            if (item.text === task.innerText) {
                 item.done = target.checked;
             }
         });
         localStorage.setItem("tasks", JSON.stringify(taskArray));
-    } else if(target.closest(".deleteBtn")) {
+    } else if (target.closest(".deleteBtn")) {
         const index = taskArray.findIndex(t => t.text === task.innerText);
         taskArray.splice(index, 1);
         localStorage.setItem("tasks", JSON.stringify(taskArray));
-        
+
         taskContainer.remove();
     }
 };
 
-const renderTask = ({done, text}) => {
+const renderTask = ({ done, text }) => {
     const newTask = document.createElement("div");
     newTask.classList.add("task-container");
 
@@ -62,7 +62,7 @@ const renderTask = ({done, text}) => {
     spanWithValue.classList.toggle("done", done);
 
     newTask.appendChild(checkBox);
-    newTask.appendChild(spanWithValue);    
+    newTask.appendChild(spanWithValue);
     newTask.appendChild(deleteBtn);
 
     tasks.appendChild(newTask);
@@ -71,9 +71,9 @@ const renderTask = ({done, text}) => {
 const getTasks = () => {
     try {
         const taskArr = JSON.parse(localStorage.getItem("tasks"));
-        if(!Array.isArray(taskArr)) {return [];}
+        if (!Array.isArray(taskArr)) { return []; }
         return taskArr;
-    } catch(err) {
+    } catch (err) {
         return [];
     }
 };
