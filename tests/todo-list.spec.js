@@ -14,19 +14,19 @@ test.describe('To-Do App', () => {
     await todoPage.goto();
   });
 
-  test('has title', async () => {
+  test('Loads with correct title and heading', async () => {
     await todoPage.assertTitle();
     await todoPage.assertHeadingVisible();
   });
 
-  test('does not add empty task', async () => {
+  test('Prevent adding empty tasks', async () => {
     await todoPage.addTask(space);
     await todoPage.addTask(empty);
 
     await expect(todoPage.checkBox).toHaveCount(0);
   });
 
-  test('add task', async () => {
+  test('Add multiple todos and toggle their completion status', async () => {
     await todoPage.addTask(firstTask);
     await todoPage.addTask(secondTask);
 
@@ -41,7 +41,7 @@ test.describe('To-Do App', () => {
     await todoPage.assertTaskVisible(secondTask);
   });
 
-  test('saves tasks to localStorage', async ({ page }) => {
+  test('Saves tasks to localStorage', async ({ page }) => {
     await todoPage.addTask(firstTask);
     await todoPage.addTask(secondTask);
 
@@ -54,7 +54,7 @@ test.describe('To-Do App', () => {
     expect(tasks[1].text).toBe(secondTask);
   });
 
-  test('delete task', async () => {
+  test('Delete a task', async () => {
     await todoPage.addTask(firstTask);
     await todoPage.addTask(secondTask);
 
@@ -64,7 +64,7 @@ test.describe('To-Do App', () => {
     await todoPage.assertTaskNotVisible(secondTask);
   });
 
-  test('clear all tasks', async () => {
+  test('Clear all tasks', async () => {
     await todoPage.addTask(firstTask);
     await todoPage.addTask(secondTask);
 
